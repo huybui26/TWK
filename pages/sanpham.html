@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generated Page</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tất cả sản phẩm - OCOP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/pages/sanpham.css">
+  <script src="../assets/js/global.js" defer></script>
+</head>
+<body>
+<div id="import-header"></div>
+<main class="page-content">
+  <div class="container">
+    <nav aria-label="breadcrumb" class="breadcrumbs">
+      <ol>
+        <li><a href="../index.html"><img src="../assets/images/22_13582.svg" alt="Home"></a></li>
+        <li><img src="../assets/images/22_13583.svg" alt="" class="separator"></li>
+        <li><a href="sanpham.html">Sản phẩm</a></li>
+        <li><img src="../assets/images/22_13585.svg" alt="" class="separator"></li>
+        <li><a href="#" aria-current="page">Tất cả sản phẩm</a></li>
+      </ol>
+    </nav>
+
+    <div class="products-layout">
+      <aside class="filters-sidebar">
+        <h2 class="filters-title">Lọc sản phẩm</h2>
+        <div class="filter-group">
+          <button class="filter-toggle" id="toggle-price-filter" type="button">
+            <span>Giá tiền</span>
+            <img src="../assets/images/22_13594.svg" alt="toggle" class="rotated">
+          </button>
+          <div class="price-filter-content" id="price-filter-content" style="display:none;">
+            <div class="price-labels">
+              <span id="min-price-label" class="price-label">0</span>
+              <span id="max-price-label" class="price-label" style="float:right; color:#fd9f20;">500.000 đ</span>
+            </div>
+            <div class="price-slider-row">
+              <input type="range" min="0" max="500000" step="1000" value="0" id="price-min" class="price-slider">
+              <input type="range" min="0" max="500000" step="1000" value="500000" id="price-max" class="price-slider">
+            </div>
+            <div class="price-inputs">
+              <span>Từ</span>
+              <input type="text" id="input-min" class="price-input" value="0 đ">
+              <span>Đến</span>
+              <input type="text" id="input-max" class="price-input" value="500.000 đ">
+            </div>
+            <button id="apply-price-filter" class="btn btn-primary" style="margin-top: 16px; width: 100%;">Áp dụng</button>
+          </div>
+        </div>
+        <div class="filter-group" id="filter-group-category">
+          <button class="filter-toggle" id="toggle-category-filter" type="button">
+            <span>Loại sản phẩm</span>
+            <img src="../assets/images/22_13598.svg" alt="toggle" class="rotated">
+          </button>
+          <div class="category-filter-content" id="category-filter-content" style="display:none;">
+            <div class="category-search-row">
+              <input type="text" id="category-search" class="category-search-input" placeholder="Tìm kiếm...">
+              <button class="category-search-btn" type="button"><img src="../assets/images/I22_9276_1344_42824.svg" alt="Search"></button>
+            </div>
+            <div class="category-list-scroll">
+              <label class="category-checkbox"><input type="checkbox" value="Trái cây"> Trái cây</label>
+              <label class="category-checkbox"><input type="checkbox" value="Gia vị"> Gia vị</label>
+              <label class="category-checkbox"><input type="checkbox" value="Trà"> Trà</label>
+              <label class="category-checkbox"><input type="checkbox" value="Tinh dầu"> Tinh dầu</label>
+              <label class="category-checkbox"><input type="checkbox" value="Đồ sấy"> Đồ sấy</label>
+              <label class="category-checkbox"><input type="checkbox" value="Khô thịt"> Khô thịt</label>
+            </div>
+            <button id="apply-category-filter" class="btn btn-primary" style="margin-top: 16px; width: 100%;">Áp dụng</button>
+          </div>
+        </div>
+        <div class="filter-group" id="filter-group-rating">
+          <button class="filter-toggle" id="toggle-rating-filter" type="button">
+            <span>Đánh giá OCOP</span>
+            <img src="../assets/images/22_13596.svg" alt="toggle" class="rotated">
+          </button>
+          <div class="rating-filter-content" id="rating-filter-content" style="display:none;">
+            <label class="rating-checkbox"><input type="checkbox" value="5"> 5 sao</label>
+            <label class="rating-checkbox"><input type="checkbox" value="4"> 4 sao</label>
+            <label class="rating-checkbox"><input type="checkbox" value="3"> 3 sao</label>
+            <label class="rating-checkbox"><input type="checkbox" value="2"> 2 sao</label>
+            <label class="rating-checkbox"><input type="checkbox" value="1"> 1 sao</label>
+            <button id="apply-rating-filter" class="btn btn-primary" style="margin-top: 16px; width: 100%;">Áp dụng</button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="products-area">
+        <!--merged image-->
+        <div class="promo-banner">
+          <img src="../assets/images/923ed3e03eeb7bace46975c25120247398623e0d.png" alt="Xoài Cao Lãnh" class="promo-bg">
+          <div class="promo-overlay"></div>
+          <div class="promo-content">
+            <h1>Xoài Cao Lãnh khuyến mãi 50%</h1>
+            <p>Mừng ngày phụ nữ</p>
+            <a href="sanpham.html" class="btn btn-primary">Mua ngay</a>
+          </div>
+        </div>
+
+        <div class="standard-check">
+          <!--merged image-->
+          <div class="custom-checkbox">
+            <div class="checkbox-bg"></div>
+            <img src="../assets/images/22_13612.svg" alt="checkmark" class="checkmark">
+          </div>
+          <label>Đạt tiêu chuẩn 5 sao OCOP</label>
+        </div>
+
+        <div class="products-header">
+          <div class="products-header-info">
+            <h2>Tất cả sản phẩm</h2>
+          </div>
+          <div class="sort-control">
+            <button class="sort-dropdown">
+              <img src="../assets/images/I22_13830_1667_25591.svg" alt="">
+              <span>Sắp xếp theo</span>
+              <img src="../assets/images/I22_13830_1667_25589.svg" alt="" class="chevron">
+            </button>
+          </div>
+        </div>
+        <div class="active-filters" id="active-filters"></div>
+        <div class="product-grid">
+          <!-- Repeat Product Card -->
+          <article class="product-card" data-price="200000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/5f28f0419fd7d4600f22f90d7d06412a133bd1f6.png" alt="Ổi nữ hoàng" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Ổi nữ hoàng</h3>
+              <div class="product-price">
+                <span class="current-price">200.000đ</span>
+                <span class="original-price">350.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/I22_13622_120_3390.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="250000">
+            <a href="chitietsanpham.html" style="display:block;text-decoration:none;color:inherit;">
+              <div class="discount-badge">-30%</div>
+              <div class="product-image-container">
+                <img src="../assets/images/d8839fd99739fd38075b51d8413167cc05b7dfcc.png" alt="Xoài Cao Lãnh" class="product-image">
+              </div>
+              <div class="product-info">
+                <h3>Xoài Cao Lãnh</h3>
+                <div class="product-price">
+                  <span class="current-price">250.000đ</span>
+                  <span class="original-price">500.000đ</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm-primary">Mua ngay</button>
+                  <button class="btn btn-sm-icon"><img src="../assets/images/22_13637.svg" alt="Add to cart"></button>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="product-card" data-price="150000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/00133549211b438d644373752bf2f0b2001d68f9.png" alt="Nhãn Châu Thành" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Nhãn Châu Thành</h3>
+              <div class="product-price">
+                <span class="current-price">150.000đ</span>
+                <span class="original-price">450.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/22_13654.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="180000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/18ff8d928ebef7c89b874187227bdc6841f371e8.png" alt="Ổi Ruby" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Ổi Ruby</h3>
+              <div class="product-price">
+                <span class="current-price">180.000đ</span>
+                <span class="original-price">420.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/22_13671.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <!-- ... more product cards would be repeated here ... -->
+          <article class="product-card" data-price="200000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/5f28f0419fd7d4600f22f90d7d06412a133bd1f6.png" alt="Ổi nữ hoàng" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Ổi nữ hoàng</h3>
+              <div class="product-price">
+                <span class="current-price">200.000đ</span>
+                <span class="original-price">350.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/I22_13674_120_3390.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="250000">
+            <a href="chitietsanpham.html" style="display:block;text-decoration:none;color:inherit;">
+              <div class="discount-badge">-30%</div>
+              <div class="product-image-container">
+                <img src="../assets/images/d8839fd99739fd38075b51d8413167cc05b7dfcc.png" alt="Xoài Cao Lãnh" class="product-image">
+              </div>
+              <div class="product-info">
+                <h3>Xoài Cao Lãnh</h3>
+                <div class="product-price">
+                  <span class="current-price">250.000đ</span>
+                  <span class="original-price">500.000đ</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm-primary">Mua ngay</button>
+                  <button class="btn btn-sm-icon"><img src="../assets/images/22_13691.svg" alt="Add to cart"></button>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="product-card" data-price="150000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/00133549211b438d644373752bf2f0b2001d68f9.png" alt="Nhãn Châu Thành" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Nhãn Châu Thành</h3>
+              <div class="product-price">
+                <span class="current-price">150.000đ</span>
+                <span class="original-price">450.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/22_13742.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="180000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/18ff8d928ebef7c89b874187227bdc6841f371e8.png" alt="Ổi Ruby" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Ổi Ruby</h3>
+              <div class="product-price">
+                <span class="current-price">180.000đ</span>
+                <span class="original-price">420.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/22_13793.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="200000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/5f28f0419fd7d4600f22f90d7d06412a133bd1f6.png" alt="Ổi nữ hoàng" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Ổi nữ hoàng</h3>
+              <div class="product-price">
+                <span class="current-price">200.000đ</span>
+                <span class="original-price">350.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/I22_13674_120_3390.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="250000">
+            <a href="chitietsanpham.html" style="display:block;text-decoration:none;color:inherit;">
+              <div class="discount-badge">-30%</div>
+              <div class="product-image-container">
+                <img src="../assets/images/d8839fd99739fd38075b51d8413167cc05b7dfcc.png" alt="Xoài Cao Lãnh" class="product-image">
+              </div>
+              <div class="product-info">
+                <h3>Xoài Cao Lãnh</h3>
+                <div class="product-price">
+                  <span class="current-price">250.000đ</span>
+                  <span class="original-price">500.000đ</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm-primary">Mua ngay</button>
+                  <button class="btn btn-sm-icon"><img src="../assets/images/22_13691.svg" alt="Add to cart"></button>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="product-card" data-price="150000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/00133549211b438d644373752bf2f0b2001d68f9.png" alt="Nhãn Châu Thành" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Nhãn Châu Thành</h3>
+              <div class="product-price">
+                <span class="current-price">150.000đ</span>
+                <span class="original-price">450.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/22_13742.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="180000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/18ff8d928ebef7c89b874187227bdc6841f371e8.png" alt="Ổi Ruby" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Ổi Ruby</h3>
+              <div class="product-price">
+                <span class="current-price">180.000đ</span>
+                <span class="original-price">420.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/22_13793.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="200000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/5f28f0419fd7d4600f22f90d7d06412a133bd1f6.png" alt="Ổi nữ hoàng" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Ổi nữ hoàng</h3>
+              <div class="product-price">
+                <span class="current-price">200.000đ</span>
+                <span class="original-price">350.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/I22_13674_120_3390.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="250000">
+            <a href="chitietsanpham.html" style="display:block;text-decoration:none;color:inherit;">
+              <div class="discount-badge">-30%</div>
+              <div class="product-image-container">
+                <img src="../assets/images/d8839fd99739fd38075b51d8413167cc05b7dfcc.png" alt="Xoài Cao Lãnh" class="product-image">
+              </div>
+              <div class="product-info">
+                <h3>Xoài Cao Lãnh</h3>
+                <div class="product-price">
+                  <span class="current-price">250.000đ</span>
+                  <span class="original-price">500.000đ</span>
+                </div>
+                <div class="product-actions">
+                  <button class="btn btn-sm-primary">Mua ngay</button>
+                  <button class="btn btn-sm-icon"><img src="../assets/images/22_13691.svg" alt="Add to cart"></button>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="product-card" data-price="150000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/00133549211b438d644373752bf2f0b2001d68f9.png" alt="Nhãn Châu Thành" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Nhãn Châu Thành</h3>
+              <div class="product-price">
+                <span class="current-price">150.000đ</span>
+                <span class="original-price">450.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/22_13742.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-price="180000">
+            <div class="discount-badge">-30%</div>
+            <div class="product-image-container">
+              <img src="../assets/images/18ff8d928ebef7c89b874187227bdc6841f371e8.png" alt="Ổi Ruby" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3>Ổi Ruby</h3>
+              <div class="product-price">
+                <span class="current-price">180.000đ</span>
+                <span class="original-price">420.000đ</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-sm-primary">Mua ngay</button>
+                <button class="btn btn-sm-icon"><img src="../assets/images/22_13793.svg" alt="Add to cart"></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="load-more-container">
+          <button class="btn btn-outline">Xem thêm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+  <div id="import-footer"></div>
+  <script src="../assets/js/import-layout-pages.js"></script>
+</body>
+</html>
