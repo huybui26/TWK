@@ -1,23 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // lấy danh sách các banner trong hero-slider
   const banners = document.querySelectorAll('#hero-slider .product-section');
   const nextBtn = document.querySelector('#hero-slider .hero-slider-arrow.next');
   const prevBtn = document.querySelector('#hero-slider .hero-slider-arrow.prev');
   if (banners.length > 0) {
-    // Tìm index của banner guava
+    // Tìm index của banner ổi
     let current = 0;
     banners.forEach((b, i) => {
       if (b.id === 'product-guava') current = i;
     });
-
+    // hàm cập nhật màu sắc của header
     function updateHeaderColor() {
       const activeBanner = banners[current];
-      const themeColor = getComputedStyle(activeBanner).getPropertyValue('--theme-color').trim();
+      const themeColor = getComputedStyle(activeBanner).getPropertyValue('--theme-color').trim(); // lấy màu sắc của banner gán vào bên phải header
       const headerRight = document.querySelector('.header-right');
       if (headerRight && themeColor) {
         headerRight.style.background = themeColor;
       }
     }
-
+    // Chỉ hiện các banner ở vị trí index
     function showBanner(idx) {
       banners.forEach((b, i) => {
         b.classList.toggle('active', i === idx);
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var minLabel = document.getElementById('min-price-label');
   var maxLabel = document.getElementById('max-price-label');
   if (toggleBtn && filterContent && filterGroup && minSlider && maxSlider && minInput && maxInput && minLabel && maxLabel) {
+    // click vào nút lọc giá ẩn hoặc hiện
     toggleBtn.addEventListener('click', function(e) {
       filterGroup.classList.toggle('open');
       if (filterGroup.classList.contains('open')) {
@@ -76,10 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function formatPrice(val) {
       return Number(val).toLocaleString('vi-VN') + ' đ';
     }
-    function syncSliderInput() {
+    function syncSliderInput() { // gán giá trị cho thanh kéo
       var min = parseInt(minSlider.value);
       var max = parseInt(maxSlider.value);
-      if (min > max) min = maxSlider.value = min;
+      if (min > max) min = maxSlider.value = min; // nếu giá trị min lớn hơn max thì gán giá trị max cho min
       minInput.value = formatPrice(min);
       maxInput.value = formatPrice(max);
       minLabel.textContent = min === 0 ? '0' : formatPrice(min);
@@ -120,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Category filter logic
+  // lọc theo Category 
   var toggleCategoryBtn = document.getElementById('toggle-category-filter');
   var categoryContent = document.getElementById('category-filter-content');
   var categoryGroup = toggleCategoryBtn ? toggleCategoryBtn.closest('.filter-group') : null;
@@ -139,15 +141,15 @@ document.addEventListener('DOMContentLoaded', function() {
       e.stopPropagation();
     });
   }
-  // Category filter apply
+  // Category apply
   var applyCategoryBtn = document.getElementById('apply-category-filter');
   if (applyCategoryBtn) {
     applyCategoryBtn.addEventListener('click', function() {
       var checked = Array.from(document.querySelectorAll('.category-checkbox input[type="checkbox"]:checked')).map(cb => cb.value);
-      // TODO: Thực hiện lọc sản phẩm thật ở đây
+      // TODO: Thực hiện lọc sản phẩm thật 
     });
   }
-  // Rating filter logic
+  // lọc theo rating
   var toggleRatingBtn = document.getElementById('toggle-rating-filter');
   var ratingContent = document.getElementById('rating-filter-content');
   var ratingGroup = toggleRatingBtn ? toggleRatingBtn.closest('.filter-group') : null;
@@ -166,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.stopPropagation();
     });
   }
-  // Rating filter apply
+  // Rating apply
   var applyRatingBtn = document.getElementById('apply-rating-filter');
   if (applyRatingBtn) {
     applyRatingBtn.addEventListener('click', function() {
@@ -175,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // --- FILTER TAG/CHIP LOGIC ---
+  // --- Chip lọc hiển thị trên sản phẩm ---
   const filterTagContainer = document.getElementById('active-filters');
   let activeFilters = [];
 
@@ -208,13 +210,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Remove filter tag
+  // xoá tag lọc
   if (filterTagContainer) {
     filterTagContainer.addEventListener('click', function(e) {
       if (e.target.classList.contains('remove-filter')) {
         const type = e.target.getAttribute('data-type');
         const value = e.target.getAttribute('data-value');
-        // Remove from activeFilters
+        // xoá khỏi activeFilters
         if (type === 'category' || type === 'rating') {
           activeFilters = activeFilters.filter(f => !(f.type === type && f.value === value));
         } else {
@@ -279,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Tab switching for product detail page
+  // Tab chuyển cho sản phẩm chi tiết
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabContents = [];
   if (tabBtns.length) {
@@ -307,8 +309,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // --- SEARCH FUNCTIONALITY ---
-  // Wait for header to be imported first
+  // --- hàm search ---
+  // chờ header được nhập vào trước
   setTimeout(function() {
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
@@ -316,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Search elements found:', { searchInput, searchResults, searchForm });
 
-  // Product database - all available products with categories
+  // dữ liệu sản phẩm
   const products = [
     {
       name: "Xoài Cao Lãnh",
@@ -369,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   ];
 
-  // Product type mapping for search
+  // loại sản phẩm mapping cho search
   const productTypeMapping = {
     "xoài": ["Xoài Cao Lãnh"],
     "ổi": ["Ổi nữ hoàng", "Ổi Ruby"],
@@ -382,26 +384,26 @@ document.addEventListener('DOMContentLoaded', function() {
     "rượu": ["Rượu gạo"]
   };
 
-  // Function to get correct image path based on current page
+  // hàm lấy đường dẫn ảnh
   function getImagePath(imagePath) {
     const currentPath = window.location.pathname;
     if (currentPath.includes('/pages/') || currentPath.endsWith('/pages/')) {
-      // We're in a subdirectory (pages), so need to go up one level
+      // đang ở trong thư mục pages, cần lên một cấp
       return imagePath.replace('assets/images/', '../assets/images/');
     } else {
-      // We're in root directory (index.html)
+      // đang ở trong thư mục gốc
       return imagePath;
     }
   }
 
-  // Function to get correct link path based on current page
+  // hàm lấy đường dẫn link
   function getLinkPath(linkPath) {
     const currentPath = window.location.pathname;
     if (currentPath.includes('/pages/') || currentPath.endsWith('/pages/')) {
-      // We're in a subdirectory (pages), so use relative path
+      // đang ở trong thư mục pages, sử dụng đường dẫn tương đối
       return linkPath;
     } else {
-      // We're in root directory (index.html), so need to add pages/
+      // đang ở trong thư mục gốc, cần thêm pages/
       return linkPath.replace('.html', '.html').replace('sanpham.html', 'pages/sanpham.html');
     }
   }
@@ -414,17 +416,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const queryLower = query.toLowerCase();
     
-    // Check if query matches a product type
+    // kiểm tra xem query có khớp với loại sản phẩm không
     const matchedProductNames = productTypeMapping[queryLower];
     
     if (matchedProductNames) {
-      // If it's a product type search, show specific products
+      // nếu là tìm kiếm loại sản phẩm, hiển thị các sản phẩm cụ thể
       const filteredProducts = products.filter(product =>
         matchedProductNames.includes(product.name)
       );
       displaySearchResults(filteredProducts, true, query);
     } else {
-      // Regular product name search
+      // tìm kiếm sản phẩm theo tên
       const filteredProducts = products.filter(product =>
         product.name.toLowerCase().includes(queryLower)
       );
@@ -440,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (results.length === 0) {
       searchResults.innerHTML = '<div class="search-no-results">Không tìm thấy sản phẩm</div>';
     } else {
-      // Add product type header if it's a product type search
+      // thêm header loại sản phẩm nếu là tìm kiếm loại sản phẩm
       if (isProductTypeSearch && searchTerm) {
         const productNames = results.map(p => p.name).join(', ');
         const searchHeader = document.createElement('div');
@@ -456,12 +458,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const resultItem = document.createElement('a');
         resultItem.className = 'search-result-item';
         
-        // If it's a product type search, add products parameter to URL
+        // nếu là tìm kiếm loại sản phẩm, thêm products parameter to URL
         if (isProductTypeSearch && searchTerm) {
           const productNames = results.map(p => p.name).join(', ');
           resultItem.href = `${getLinkPath(product.link)}?products=${encodeURIComponent(productNames)}`;
         } else {
-          // For regular search, add single product parameter
+          // tìm kiếm sản phẩm theo tên, thêm products parameter to URL
           resultItem.href = `${getLinkPath(product.link)}?products=${encodeURIComponent(product.name)}`;
         }
         
@@ -500,18 +502,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const matchedProductNames = productTypeMapping[queryLower];
         
         if (matchedProductNames) {
-          // If it's a product type search, redirect with products parameter
+          // nếu là tìm kiếm loại sản phẩm, chuyển hướng với products parameter
           const productNames = matchedProductNames.join(', ');
           window.location.href = `${getLinkPath('sanpham.html')}?products=${encodeURIComponent(productNames)}`;
         } else {
-          // Regular search
+          // tìm kiếm sản phẩm theo tên, chuyển hướng với search parameter
           window.location.href = `${getLinkPath('sanpham.html')}?search=${encodeURIComponent(query)}`;
         }
       }
     });
   }
 
-  // Hide search results when clicking outside
+  // ẩn kết quả tìm kiếm khi click ngoài
   document.addEventListener('click', function(e) {
     if (!searchForm || !searchForm.contains(e.target)) {
       if (searchResults) {
@@ -520,12 +522,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Handle products parameter on products page
+  // xử lý products parameter trên trang sản phẩm
   const urlParams = new URLSearchParams(window.location.search);
   const productsParam = urlParams.get('products');
   
   if (productsParam) {
-    // Filter products by specific product names
+    // lọc sản phẩm theo tên sản phẩm
     setTimeout(function() {
       const productCards = document.querySelectorAll('.product-card');
       const productNames = productsParam.split(', ');
@@ -541,7 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       
-      // Show message about filtered results
+      // hiển thị thông báo về kết quả lọc
       const productsArea = document.querySelector('.products-area');
       if (productsArea && foundProducts > 0) {
         const filterMessage = document.createElement('div');
@@ -562,12 +564,12 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         productsArea.insertBefore(filterMessage, productsArea.firstChild);
       }
-    }, 500); // Wait for page to load
+    }, 500); // chờ trang tải xong
   }
-  }, 200); // Wait 200ms for header to load
+  }, 200); // chờ header tải xong
 });
 
-// Global function to clear filter
+// hàm xoá filter
 function clearFilter() {
   const productCards = document.querySelectorAll('.product-card');
   productCards.forEach(card => {
@@ -579,7 +581,7 @@ function clearFilter() {
     filterMessage.remove();
   }
   
-  // Remove URL parameter
+  // xoá URL parameter
   const url = new URL(window.location);
   url.searchParams.delete('products');
   window.history.replaceState({}, '', url);

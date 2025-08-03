@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-/* CSS for section section:main-content */
+/* CSS main-content */
 .main-content-section {
         padding: 40px 0;
     }
@@ -230,7 +230,7 @@ h1, h2, h3, h4, h5, h6, p {
         }
     }
 
-/* CSS for section section:related-articles */
+/* CSS related-articles */
 .related-articles-section {
         padding: 73px 0 52px;
     }
